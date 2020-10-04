@@ -1,0 +1,20 @@
+@mixin main {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin scaling($size) {
+    -webkit-transform: scale($size);
+	-moz-transform: scale($size);
+	-o-transform: scale($size);
+	-ms-transform: scale($size);
+	transform: scale($size);
+}
+
+@mixin headings {
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    @content;
+}
