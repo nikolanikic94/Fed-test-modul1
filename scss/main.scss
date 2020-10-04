@@ -9,9 +9,10 @@ main {
     height: 100vh;
     nav {
         background-color: $dark-green;
+        width: 100%;
         ul {
             text-align: center;
-            padding: .8em;
+            padding: .8em 0;
             li {
                 display: inline-block;
                 padding: 0 1.5em;
@@ -212,6 +213,45 @@ main {
             input[type="submit"] {
                 width: 100%;
                 padding: .5em;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    main {
+        nav {
+            ul {
+                li {
+                    &.sign-in {
+                        display: inline-block;
+                        font-weight: bold;
+                        a {
+                            color: $red-color;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+        .logo-and-login {
+            .logo {
+                width: 100%;
+                justify-content: center;
+            }
+            form {
+                display: none;
+            }
+        }
+    }
+
+    .contact {
+        .contact-and-map {
+            flex-direction: column-reverse;
+            form {
+                width: 60%;
+                margin: 1em auto;
             }
         }
     }
