@@ -1,2 +1,218 @@
 @import "vars";
 @import "mixins";
+
+* {
+    @include main;
+}
+
+main {
+    height: 100vh;
+    nav {
+        background-color: $dark-green;
+        ul {
+            text-align: center;
+            padding: .8em;
+            li {
+                display: inline-block;
+                padding: 0 1.5em;
+                &.sign-in {
+                    display: none;
+                }
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .logo-and-login {
+        background-color: $light-green;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2em;
+        .logo {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            img {
+                width: 10%;
+                height: auto;
+            }
+            h1 {
+                @include headings;
+                text-transform: uppercase;
+                margin-left: 1em;
+
+                span {
+                    color: $red-color;
+                }
+            }
+        }
+        form {
+            text-align: right;
+            width: 50%;
+            input {
+                background-color: $dark-green;
+                padding: .5em;
+                border-radius: 4px;
+                border: none;
+                color: rgb(211, 211, 211);
+                &::placeholder {
+                    color: rgb(211, 211, 211);
+                }
+                &[type="submit"] {
+                    background-color: $red-color;
+                }
+            }
+            p {
+                padding: .5em;
+                color: $dark-green;
+                a {
+                    color: $red-color;
+                }
+            }
+
+        }
+    }
+    header {
+        background-image: url("../slike/intro.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        height: 90vh;
+        text-align: center;
+        padding-top: 10em;
+        h2 {
+            font-size: 3em;
+            @include headings;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.582);
+            padding: .5em;
+            width: 70%;
+            margin: 1em auto;
+        }
+        button {
+            padding: .8em 2em;
+            font-size: 1.3em;
+            background-color: $dark-green;
+            border: none;
+            border-radius: 4px;
+            color: $light-green;
+        }
+    }
+}
+
+.benefits {
+    background-color: $lighter-green;
+    padding: 5em 0;
+    h2 {
+        @include headings;
+        text-align: center;
+        text-transform: uppercase;
+        color: $dark-green;
+        font-size: 2em;
+    }
+    .cards {
+        width: 95%;
+        display: flex;
+        margin: 0 auto;
+        .card {
+            width: 33%;
+            padding: 4em;
+            text-align: center;
+            img {
+                width: 100%;
+                @include transition(.3s);
+                &:hover {
+                    @include scaling(1.1);
+                }
+            }
+            h3 {
+                @include headings;
+                margin: .5em 0;
+                color: $red-color;
+                font-size: 1.3em;
+            }
+            p {
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+.about {
+    background-color: #fff;
+    padding: 5em 0;
+    .about-us {
+        width: 95%;
+        margin: 0 auto;
+        text-align: right;
+        h2 {
+            @include headings;
+            text-transform: uppercase;
+            color: $dark-green;
+            text-align: left;
+        }
+        p {
+            text-align: justify;
+            margin: 1.5em 0 .5em;
+        }
+        button {
+            padding: .5em;
+            border-radius: 4px;
+            border: none;
+            color: rgb(211, 211, 211);
+            background-color: $red-color;
+        }
+    }
+}
+
+.contact {
+    margin: 0 auto;
+    padding: 5em 0;
+    background-color: $dark-green;
+    .contact-and-map {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        form {
+            text-align: center;
+            padding: .5em 1.5em;
+            margin-right: 2em;
+            background-color: rgba(219, 219, 219, 0.274);
+            h2 {
+                color: $dark-green;
+                @include headings;
+                text-transform: uppercase;
+                margin-bottom: 1em;
+            }
+            #name {
+                width: 47.2%;
+                padding: .5em;
+                margin-bottom: .3em;
+            }
+            #cont-email {
+                width: 47.2%;
+                padding: .5em;
+                margin-bottom: .3em;
+            }
+            #subject {
+                width: 95%;
+                padding: .5em;
+            }
+            #message {
+                width: 95%;
+                margin: 1em 0;
+                height: 10em;
+                padding: .5em;
+                resize: none;
+            }
+            input[type="submit"] {
+                width: 100%;
+                padding: .5em;
+            }
+        }
+    }
+}
